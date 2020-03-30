@@ -14,11 +14,18 @@ jika sudah maka buka localhost pada browser untuk menjalankannya.
 
 Disini akan dibuat beberapa contoh node yang diperlukan. Diantaranya membuat nama2 orang dan kaitannya dengan orang lain. Gunakan cypher query.
 
-CREATE (Joko:Person {name:"Joko Tingkir", born:1991})
-CREATE (Agung:Person {name:"Agung Prayogi", born:1961})
-CREATE (Ainun:Person {name:"Ainun FUji", born:1962})
-CREATE (Dwi:Person {name:"Dwi Aulia", born:1992})
-CREATE (Dita:Person {name:"Dita Widianti", born:1995})
-CREATE
-
-
+CREATE (Joko:Person {name:"Joko Tingkir", born:1991})\
+CREATE (Agung:Person {name:"Agung Prayogi", born:1961})\
+CREATE (Ainun:Person {name:"Ainun FUji", born:1962})\
+CREATE (Dwi:Person {name:"Dwi Aulia", born:1992})\
+CREATE (Dita:Person {name:"Dita Widianti", born:1995})\
+CREATE\
+(Joko)-[:ANAK]->(Agung),\
+(Dwi)-[:ANAK]->(Agung),\
+(Dita)-[:PONAKAN]->(Agung),\
+(Agung)-[:AYAH]->(Joko),\
+(Agung)-[:AYAH]->(Dwi),\
+(Agung)-[:PAMAN]->(Dita),\
+(Ainun)-[:IBU]->(Joko),\
+(Ainun)-[:IBU]->(Dwi),\
+(Ainun)-[:BIBI]->(Dita)\
